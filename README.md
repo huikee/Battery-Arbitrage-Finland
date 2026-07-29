@@ -2,7 +2,7 @@
 Data analysis project investigating whether residential battery storage can reduce electricity costs in Finland using historical Nord Pool spot electricity prices. 
 
 ## Technologies 
-Python, SQL (PostSQL), Pandas, Matplotlib, Power BI and Git.
+Python, SQL (PostgreSQL), DBeaver, Pandas, Matplotlib, Power BI and Git.
 
 ## Dataset
 Nord Pool Finland spot electricity prices:

@@ -16,5 +16,3 @@ df["day_of_week"] = df["timestamp"].dt.day_name()
 df["hour"] = df["timestamp"].dt.hour
 
 print(df.head())
-
-print(df["timestamp"].dtype)
