@@ -1,7 +1,6 @@
 import pandas as pd
 
 # explore_data.py: Basic exploratory data-analysis
-
 df = pd.read_csv("data/electricitydata.csv")
 
 # Print the 5 first rows
@@ -28,7 +27,7 @@ print(df.shape)
 print("\n*** Column names ***")
 print(df.columns)
 
-# Print duplicate wors
+# Print duplicate rows
 print("\n*** Duplicate Rows***")
 print(df.duplicated().sum())
 
@@ -49,6 +48,6 @@ print(missing_prices.index)
 # Dropping empty Price_cpkWh rows
 df = df.dropna(subset=["Price_cpkWh"])
 
-# Print rows after removing missing prices 
+# Print rows after removing missing prices
 print("\nRows after removing missing prices:")
 print(len(df))
