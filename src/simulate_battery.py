@@ -11,6 +11,9 @@ engine = create_engine(DATABASE_URL)
 # Saving electricity_prices_clean to df
 df = pd.read_sql("SELECT * FROM electricity_prices_clean", engine)
 
+# Treat negative prices as zero
+df["spot_price"] = df["spot_price"].clip(lower=0)
+
 # Battery capacity (kWh)
 battery_capacity = 10.0
 
@@ -38,7 +41,7 @@ results = []
 
 # Number of charging and discharging hours required
 hours_to_charge = math.ceil(battery_capacity / (charge_rate * efficiency))
-hours_to_discharge = math.ceil(battery_capacity/discharge_rate)
+hours_to_discharge = math.ceil(battery_capacity / discharge_rate)
 
 # Simulate one day at a time using day-ahead prices
 for date, day_data in df.groupby("date"):
@@ -100,11 +103,11 @@ for date, day_data in df.groupby("date"):
 
         # Save simulation results
         results.append({
-        'timestamp': row['timestamp'],
-        'price': price,
-        'battery_level': battery_level,
-        'total_savings': total_savings,
-        'action': action})
+            'timestamp': row['timestamp'],
+            'price': price,
+            'battery_level': battery_level,
+            'total_savings': total_savings/100,
+            'action': action})
 
 # Changing the results into a DataFrame
 results_df = pd.DataFrame(results)
