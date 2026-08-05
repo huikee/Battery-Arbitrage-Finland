@@ -17,3 +17,11 @@ The dataset contained 170 missing values in the Price_cpkWh column (0,54% of all
 4. Develop a simple battery usage strategy
 5. Simulate strategy using historical data
 6. Present findings in Power BI
+
+## Battery Simulation Logic
+- Utilizes the day-ahead electricity prices published by Nord Pool at approximately 2:00 PM Finnish time.
+- Charges the battery based on the following day's electricity prices.
+- Charges during the cheapest hours of the day.
+- Discharges during the most expensive hours of the day.
+- Accounts for battery efficiency (90%).
+- Maximum charging and discharging power is 5 kWh per hour.
