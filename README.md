@@ -1,10 +1,6 @@
 # Battery-Arbitrage-Finland
 Data analysis project investigating whether residential battery storage can reduce electricity costs in Finland using historical Nord Pool spot electricity prices.
 
-## Results
-![Dashboard preview](./dashboard-preview.png)
-**[Download .pbix-file](./Battery_Arbitrage_Simulation.pbix)**
-
 ## Technologies 
 Python, SQL (PostgreSQL), DBeaver, Pandas, Matplotlib, Power BI and Git.
 
