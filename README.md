@@ -24,6 +24,7 @@ The dataset contained 170 missing values in the Price_cpkWh column (0,54% of all
 
 ## Battery Simulation Logic
 - Utilizes the day-ahead electricity prices published by Nord Pool at approximately 2:00 PM Finnish time.
+- Battery size is 10kWh
 - Charges the battery based on the following day's electricity prices.
 - Charges during the cheapest hours of the day.
 - Discharges during the most expensive hours of the day.
